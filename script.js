@@ -7,4 +7,10 @@ const question = [
     choices: ["Douglas Crockford", "Sheryl Sandberg", "Brendan Eich"],
     correctAnswer: "Brendan Eich",
   },
+
+  {
+    title: "Who invented JavaScript?",
+    choices: ["Douglas Crockford", "Sheryl Sandberg", "Brendan Eich"],
+    correctAnswer: "Brendan Eich",
+  },
 ];
