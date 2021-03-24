@@ -1,0 +1,11 @@
+.topBarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.quiz container {
+  height: 50px;
+  width: 50%;
+  position: absolute;
+}
