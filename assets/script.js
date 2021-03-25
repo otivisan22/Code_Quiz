@@ -20,13 +20,14 @@ const question = [
 //Add the timer
 const startTimer = () => {
   const timerTick = () => {
-  timerSpanElement.textContent= TimerValue;
-  timerValue -= 1;
+    timerSpanElement.textContent = timerValue;
+    timerValue -= 1;
 
-  if (timerValue <0) {
-    clearInterval (timer);
-  }
+    if (timerValue < 0) {
+      clearInterval(timer);
+    }
+  };
+  const timer = setInterval(timerTick, 1000);
 };
 
-//Form container 
-const formContainer = construct formContainer;
+StartQuizButtonElement.addEventListener("click", startTimer);
