@@ -1,7 +1,7 @@
 const timerSpanElement = document.getElementById("timer");
 const StartQuizButtonElement = document.getElementById("start-btn");
 
-set timer 
+let timerValue = 60;
 
 const question = [
   {
@@ -16,3 +16,17 @@ const question = [
     correctAnswer: "Brendan Eich",
   },
 ];
+
+//Add the timer
+const startTimer = () => {
+  const timerTick = () => {
+  timerSpanElement.textContent= TimerValue;
+  timerValue -= 1;
+
+  if (timerValue <0) {
+    clearInterval (timer);
+  }
+};
+
+//Form container 
+const formContainer = construct formContainer;
