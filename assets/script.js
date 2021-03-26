@@ -50,5 +50,23 @@ const startTimer = () => {
   const timer = setInterval(timerTick, 1000);
 };
 
+const createQuestionContainer = (question) =>{
+const QuestionContainer = document.createElement ("questionContainer");
+QuestionContainer.setAttribute ("data-answer", question.correctAnswer)
+
+const h2 = document.createElement ("h2")
+h2.textContent = question.title;
+}
+
+
+const startQuiz = () =>{
+ //create question container
+ createQuestion(Questions[0]);
+ //remove the start button container
+ //append question container to the DOM
+}
+
+
 StartQuizButtonElement.addEventListener("click", startTimer);
 startButton.addEventListener("click", startButton);
+startButton.addEventListener("click", startQuiz);
