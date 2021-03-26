@@ -48,6 +48,7 @@ const startTimer = () => {
       clearInterval(timer);
     }
   };
+  
   const timer = setInterval(timerTick, 1000);
 };
 
