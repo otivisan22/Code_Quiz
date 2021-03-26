@@ -4,14 +4,7 @@ const startButton = document.getElementById("start-btn");
 
 let timerValue = 60;
 
-const createChoices = ("choices") => {
-  const createChoices = (choice) => {
-    const QuestionContainer = document.createElement("questionContainer");
-    const button = document.createElement("button");
-    button.setAttribute("data-answer", choices[0]);
-  };
-  choices.forEach(createChoices);
-};
+const createChoices = (choices) => {};
 
 StartQuizButtonElement.addEventListener("click", startTimer);
 startButton.addEventListener("click", startButton);

@@ -53,16 +53,28 @@ const questions = [
 const renderQuestion = () => {
   const question = questions[questionIndex];
 
-  const div = document.createElement("div");
-  div.setAttribute("data-answer", question.correctAnswer);
-  div.setAttribute("id", "question");
+  const questionDiv = document.createElement("div");
+  questionDiv.setAttribute("data-answer", question.correctAnswer);
+  questionDiv.setAttribute("id", "question");
 
   const h2 = document.createElement("h2");
   h2.textContent = question.title;
 
-  div.appendChild(h2);
+  questionDiv.appendChild(h2);
 
-  quizContainer.appendChild(div);
+  const createChoice = (choice) => {
+    const choiceDiv = document.createElement("div");
+    const button = document.createElement("button");
+    button.setAttribute("data-answer", choice);
+    button.textContent = choice;
+
+    choiceDiv.appendChild(button);
+    questionDiv.appendChild(choiceDiv);
+  };
+
+  question.choices.forEach(createChoice);
+
+  quizContainer.appendChild(questionDiv);
 };
 
 const startTimer = () => {
