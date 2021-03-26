@@ -2,7 +2,7 @@ const startButton = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz-container");
 const timerSpanElement = document.getElementById("timer");
 
-let timerValue = 5;
+let timerValue = 60;
 let questionIndex = 0;
 
 const questions = [
@@ -60,11 +60,16 @@ const verifyChoice = (event) => {
 
     if (selectedAnswer === correctAnswer) {
       questionIndex = questionIndex + 1;
+      if (questionIndex < questions.length) {
+        const questionDiv = document.getElementById("question");
+        quizContainer.removeChild(questionDiv);
 
-      const questionDiv = document.getElementById("question");
-      quizContainer.removeChild(questionDiv);
-
-      renderQuestion();
+        renderQuestion();
+      } else {
+        console.log("TODO-show form");
+      }
+    } else {
+      timerValue = timerValue - 5;
     }
   }
 };
@@ -103,6 +108,10 @@ const startTimer = () => {
   const timerTick = () => {
     timerSpanElement.textContent = timerValue;
     timerValue -= 1;
+
+    if (questionIndex === questions.length) {
+      clearInterval(timer);
+    }
 
     if (timerValue < 0) {
       clearInterval(timer);
