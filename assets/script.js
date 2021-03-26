@@ -2,6 +2,7 @@ const timerSpanElement = document.getElementById("timer");
 const StartQuizButtonElement = document.getElementById("start-btn");
 const startButton = document.getElementById("start-btn");
 
+
 let timerValue = 60;
 
 const question = [
@@ -50,6 +51,11 @@ const startTimer = () => {
   const timer = setInterval(timerTick, 1000);
 };
 
+const createChoices =("choices") =>{ 
+  console.log("object");
+}
+
+
 const createQuestionContainer = (question) =>{
 const QuestionContainer = document.createElement ("questionContainer");
 QuestionContainer.setAttribute ("data-answer", question.correctAnswer)
@@ -57,7 +63,10 @@ QuestionContainer.setAttribute ("data-answer", question.correctAnswer)
 const h2 = document.createElement ("h2")
 h2.textContent = question.title;
 
-//create options
+//create choices
+const choices = createChoices(question.choices);
+
+
 
 }
 
