@@ -52,12 +52,15 @@ const startTimer = () => {
 };
 
 const createChoices =("choices") =>{ 
-  const createChoices = () =>
-  choices.forEach(createChoices)
-  const QuestionContainer= document.createElement ("questionContainer");
-  const button = document.createElement ("button");
-  button.setAttribute("data-answer", choices[0]);
-}
+
+  const createChoices = (choice) =>{
+    const QuestionContainer= document.createElement ("questionContainer");
+    const button = document.createElement ("button");
+    button.setAttribute("data-answer", choices[0]);
+
+  }
+  choices.forEach(createChoices);
+};
 
 
 const createQuestionContainer = (question) =>{
