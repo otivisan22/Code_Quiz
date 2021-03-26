@@ -56,6 +56,9 @@ QuestionContainer.setAttribute ("data-answer", question.correctAnswer)
 
 const h2 = document.createElement ("h2")
 h2.textContent = question.title;
+
+//create options
+
 }
 
 
