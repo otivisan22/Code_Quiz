@@ -50,6 +50,25 @@ const questions = [
   },
 ];
 
+const verifyChoice = (event) => {
+  const target = event.target;
+  const currentTarget = event.currentTarget;
+
+  if (target.matches("button")) {
+    const selectedAnswer = target.getAttribute("data-answer");
+    const correctAnswer = currentTarget.getAttribute("data-answer");
+
+    if (selectedAnswer === correctAnswer) {
+      questionIndex = questionIndex + 1;
+
+      const questionDiv = document.getElementById("question");
+      quizContainer.removeChild(questionDiv);
+
+      renderQuestion();
+    }
+  }
+};
+
 const renderQuestion = () => {
   const question = questions[questionIndex];
 
@@ -64,6 +83,7 @@ const renderQuestion = () => {
 
   const createChoice = (choice) => {
     const choiceDiv = document.createElement("div");
+    choiceDiv.setAttribute("class", "choice");
     const button = document.createElement("button");
     button.setAttribute("data-answer", choice);
     button.textContent = choice;
@@ -73,6 +93,8 @@ const renderQuestion = () => {
   };
 
   question.choices.forEach(createChoice);
+
+  questionDiv.addEventListener("click", verifyChoice);
 
   quizContainer.appendChild(questionDiv);
 };
