@@ -12,7 +12,7 @@ const question = [
   },
 
   {
-    title: "3.What are JavaScript Data Types?",
+    title: "What are JavaScript Data Types?",
     choices: ["number,", "string", "boolen", "obejct", "undefined", "all the above"],
     correctAnswer: "all the above",
   },
