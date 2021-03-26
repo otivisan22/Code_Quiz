@@ -11,6 +11,14 @@ const startTimer = () => {
 
     if (timerValue < 0) {
       clearInterval(timer);
+
+      const div = document.createElement("div");
+      const h2 = document.createElement("h2");
+      h2.textContent = "Game Over";
+
+      div.appendChild(h2);
+
+      quizContainer.appendChild(div);
     }
   };
 
