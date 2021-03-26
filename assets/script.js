@@ -48,7 +48,7 @@ const startTimer = () => {
       clearInterval(timer);
     }
   };
-  
+
   const timer = setInterval(timerTick, 1000);
 };
 
@@ -65,14 +65,15 @@ const createChoices =("choices") =>{
 
 
 const createQuestionContainer = (question) =>{
-const QuestionContainer = document.createElement ("questionContainer");
-QuestionContainer.setAttribute ("data-answer", question.correctAnswer);
+const div = document.createElement ("div");
+div.setAttribute("data-answer", "TODO");
+div.setAttribute("id", "question");
 
 const h2 = document.createElement ("h2")
-h2.textContent = question.title;
+h2.textContent = "TODO"
 
-//create choices
-const choices = createChoices(question.choices);
+div.appendChild(h2)
+
 }
 
 

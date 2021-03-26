@@ -4,6 +4,19 @@ const timerSpanElement = document.getElementById("timer");
 
 let timerValue = 5;
 
+const renderQuestion = () => {
+  const div = document.createElement("div");
+  div.setAttribute("data-answer", "TODO");
+  div.setAttribute("id", "question");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = "TODO";
+
+  div.appendChild(h2);
+
+  quizContainer.appendChild(div);
+};
+
 const startTimer = () => {
   const timerTick = () => {
     timerSpanElement.textContent = timerValue;
@@ -11,6 +24,9 @@ const startTimer = () => {
 
     if (timerValue < 0) {
       clearInterval(timer);
+
+      const questionDiv = document.getElementById("question");
+      quizContainer.removeChild(questionDiv);
 
       const div = document.createElement("div");
       const h2 = document.createElement("h2");
@@ -30,6 +46,8 @@ const startQuiz = () => {
   quizContainer.removeChild(startContainer);
 
   startTimer();
+
+  renderQuestion();
 };
 
 startButton.addEventListener("click", startQuiz);
