@@ -1,15 +1,21 @@
+/* Universal styling */
+.body {
+  background-image: url("../images/spirit_blossom.jpg");
+}
+
+/* Header styling */
 .topBarContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
+/* Quiz-container styling */
 .quiz-container {
   height: 50px;
   width: 50%;
   position: absolute;
 }
-
+/* Choice styling */
 .choice {
   padding: 20px;
   margin: 10px;
