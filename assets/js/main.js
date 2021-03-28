@@ -2,6 +2,7 @@
 const startButton = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz-container");
 const timerSpanElement = document.getElementById("timer");
+const username = document.getElementById("username");
 
 let timerValue = 60;
 let questionIndex = 0;
@@ -51,6 +52,10 @@ const questions = [
       "JavaScript allows DOM elements to be nested inside each other",
   },
 ];
+
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+console.log(highScores);
+
 // Declare function for verifyChoice
 const verifyChoice = (event) => {
   const target = event.target;
