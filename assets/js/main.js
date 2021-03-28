@@ -1,3 +1,4 @@
+// Declare global variables
 const startButton = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz-container");
 const timerSpanElement = document.getElementById("timer");
@@ -5,6 +6,7 @@ const timerSpanElement = document.getElementById("timer");
 let timerValue = 60;
 let questionIndex = 0;
 
+// Declare function for questions
 const questions = [
   {
     title: "Who invented JavaScript?",
@@ -49,11 +51,11 @@ const questions = [
       "JavaScript allows DOM elements to be nested inside each other",
   },
 ];
-
+// Declare function for verifyChoice
 const verifyChoice = (event) => {
   const target = event.target;
   const currentTarget = event.currentTarget;
-
+  // Declare the attributes
   if (target.matches("button")) {
     const selectedAnswer = target.getAttribute("data-answer");
     const correctAnswer = currentTarget.getAttribute("data-answer");
@@ -128,10 +130,10 @@ const startTimer = () => {
       quizContainer.appendChild(div);
     }
   };
-
+  // Declare function for timer
   const timer = setInterval(timerTick, 1000);
 };
-
+// Declare function for startQuiz
 const startQuiz = () => {
   const startContainer = document.getElementById("start-container");
   quizContainer.removeChild(startContainer);
