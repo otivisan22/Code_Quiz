@@ -1,6 +1,9 @@
 /* Universal styling */
 .body {
   background-image: url("../images/spirit_blossom.jpg");
+  height: 200vh;
+  width: 100%;
+  background-size: cover;
 }
 
 /* Header styling */
