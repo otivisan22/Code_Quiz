@@ -53,6 +53,11 @@ const questions = [
   },
 ];
 
+//Declared the variable for highScores form
+const onFormSubmit = (event){
+  event.preventDefault();
+}
+
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 console.log(highScores);
 
@@ -80,6 +85,8 @@ const verifyChoice = (event) => {
     }
   }
 };
+
+
 
 const renderQuestion = () => {
   const question = questions[questionIndex];
@@ -149,3 +156,4 @@ const startQuiz = () => {
 };
 
 startButton.addEventListener("click", startQuiz);
+highScoresForm.addEventListener("click", onFormSubmit);
