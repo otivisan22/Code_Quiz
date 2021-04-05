@@ -1,5 +1,6 @@
 const gobackButton = document.getElementById("go-back");
 const clearscoresButton = document.getElementById("clear-scores");
+const tbody = document.getElementById("highScoresTableBody");
 
 const renderTableRow = (each) => {
   const name = each.name;
@@ -14,13 +15,23 @@ const renderTableRow = (each) => {
 
   tr.append(nameTd, scoreTd);
 
-  const tbody = document.getElementById("highScoresTableBody");
-
   tbody.append(tr);
 };
 
-const renderTable = () => {
+const getScoresFromLocalStorage = () => {
   const scores = JSON.parse(localStorage.getItem("highScores"));
+
+  if (scores === null) {
+    return [];
+  } else {
+    return scores;
+  }
+};
+
+const renderTable = () => {
+  const scores = getScoresFromLocalStorage();
+
+  tbody.innerHTML = "";
 
   scores.forEach(renderTableRow);
 };
@@ -30,6 +41,7 @@ const goback = () => {
 
 const clearscores = () => {
   localStorage.clear();
+  renderTable();
 };
 
 gobackButton.addEventListener("click", goback);
