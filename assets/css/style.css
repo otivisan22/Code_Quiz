@@ -6,21 +6,103 @@
   background-size: cover;
 }
 
-/* Header styling */
-.topBarContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.question h2 {
+  text-align: center;
 }
-/* Quiz-container styling */
-.quiz-container {
-  height: 50px;
-  width: 50%;
-  position: absolute;
-}
-/* Choice styling */
+
 .choice {
   padding: 20px;
   margin: 10px;
-  border: 1px solid black;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: grey;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-bottom: 2px solid red;
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  color: white;
+  background-color: #0d6efd;
+}
+
+.timer {
+  margin-left: 8px;
+  font-size: 24px;
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 30px;
+}
+
+.start-container {
+  text-align: center;
+}
+
+.start-item {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.scores-form {
+  text-align: center;
+}
+
+.scores-form input {
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.highScores {
+  background-color: #dbdbdb;
+  padding: 20px;
+}
+
+.highScores table {
+  width: 100%;
+  border: 1px solid darkgray;
+}
+
+.highScores table th {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.highScores table td {
+  border: 1px solid darkgray;
+  text-align: center;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.btn-controls {
+  margin-top: 30px;
+  text-align: center;
 }

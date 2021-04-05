@@ -86,8 +86,6 @@ const onFormSubmit = (event) => {
   window.location.href = "./highscores.html";
 };
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
 const renderForm = () => {
   const questionDiv = document.getElementById("question");
   quizContainer.removeChild(questionDiv);
@@ -96,11 +94,14 @@ const renderForm = () => {
   const input = document.createElement("input");
   const button = document.createElement("button");
 
+  form.setAttribute("class", "scores-form");
+
   input.setAttribute("placeholder", "Please enter your name");
   input.setAttribute("id", "nameInput");
   input.setAttribute("type", "text");
 
   button.setAttribute("type", "submit");
+  button.setAttribute("class", "btn");
   button.textContent = "Submit";
 
   form.addEventListener("submit", onFormSubmit);
@@ -141,6 +142,7 @@ const renderQuestion = () => {
   const questionDiv = document.createElement("div");
   questionDiv.setAttribute("data-answer", question.correctAnswer);
   questionDiv.setAttribute("id", "question");
+  questionDiv.setAttribute("class", "question");
 
   const h2 = document.createElement("h2");
   h2.textContent = question.title;
@@ -151,6 +153,7 @@ const renderQuestion = () => {
     const choiceDiv = document.createElement("div");
     choiceDiv.setAttribute("class", "choice");
     const button = document.createElement("button");
+    button.setAttribute("class", "block");
     button.setAttribute("data-answer", choice);
     button.textContent = choice;
 

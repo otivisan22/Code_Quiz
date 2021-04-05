@@ -4,26 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>HighScores</title>
   </head>
   <body>
     <!--headings section-->
     <div id="highScores">
-      <h1 class="highScores">HighScores</h1>
+      <header class="header">
+        <h1>HighScores</h1>
+      </header>
       <!--main section-->
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody id="highScoresTableBody"></tbody>
-      </table>
-      <div>
-        <button id="go-back">Go Back</button>
-        <button id="clear-scores">Clear Scores</button>
-      </div>
+      <main class="container highScores">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="highScoresTableBody"></tbody>
+        </table>
+        <div class="btn-controls">
+          <button class="btn" id="go-back">Go Back</button>
+          <button class="btn" id="clear-scores">Clear Scores</button>
+        </div>
+      </main>
     </div>
 
     <script src="./assets/js/highscores.js"></script>

@@ -9,22 +9,26 @@
   </head>
   <body>
     <!--headings section-->
-    <header>
+    <header class="header">
       <h1>Code Quiz</h1>
-      <div class="topBarContainer">
-        <a href="./highscores.html" class="high-scores">View HighScores</a>
+      <div class="header-container">
+        <div>
+          <a href="./highscores.html" class="btn">View HighScores</a>
+        </div>
+        <div>
+          Time Remaining: <span id="timer" class="timer">0</span> seconds
+        </div>
       </div>
-      <div>Time Remaining: <span id="timer">0</span> seconds</div>
     </header>
     <!--main section-->
-    <main class="quiz-container" id="quiz-container">
-      <div id="start-container">
-        <p>
+    <main class="container" id="quiz-container">
+      <div class="start-container" id="start-container">
+        <div class="start-item">
           Welcome to Code Quiz. I hope you will enjoy every moment, because each
           second counts. Be careful with the incorrect answers because will
           deduct 10 seconds from the remaining time.Best of luck.
-        </p>
-        <div class="start-button">
+        </div>
+        <div class="start-item">
           <button class="btn" id="start-btn">Start Button Quiz</button>
         </div>
       </div>
