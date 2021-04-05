@@ -11,11 +11,19 @@
     <div id="highScores">
       <h1 class="highScores">HighScores</h1>
       <!--main section-->
-    </div>
-    <div class="highScores-Container">
-      <h2>Spot</h2>
-      <h2>Name</h2>
-      <h2>Score</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="highScoresTableBody"></tbody>
+      </table>
+      <div>
+        <button id="go-back">Go Back</button>
+        <button id="clear-scores">Clear Scores</button>
+      </div>
     </div>
 
     <script src="./assets/js/highscores.js"></script>

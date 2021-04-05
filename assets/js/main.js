@@ -53,13 +53,62 @@ const questions = [
   },
 ];
 
+const getScoresFromLocalStorage = () => {
+  const scores = JSON.parse(localStorage.getItem("highScores"));
+
+  if (scores === null) {
+    return [];
+  } else {
+    return scores;
+  }
+};
+
 //Declared the variable for highScores form
-const onFormSubmit = (event){
+const onFormSubmit = (event) => {
   event.preventDefault();
-}
+
+  const input = document.getElementById("nameInput");
+
+  const name = input.value;
+  const score = timerValue;
+
+  const scoreObject = {
+    name: name,
+    score: score,
+  };
+
+  const scores = getScoresFromLocalStorage();
+
+  scores.push(scoreObject);
+
+  localStorage.setItem("highScores", JSON.stringify(scores));
+
+  window.location.href = "./highscores.html";
+};
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-console.log(highScores);
+
+const renderForm = () => {
+  const questionDiv = document.getElementById("question");
+  quizContainer.removeChild(questionDiv);
+
+  const form = document.createElement("form");
+  const input = document.createElement("input");
+  const button = document.createElement("button");
+
+  input.setAttribute("placeholder", "Please enter your name");
+  input.setAttribute("id", "nameInput");
+  input.setAttribute("type", "text");
+
+  button.setAttribute("type", "submit");
+  button.textContent = "Submit";
+
+  form.addEventListener("submit", onFormSubmit);
+
+  form.append(input, button);
+
+  quizContainer.append(form);
+};
 
 // Declare function for verifyChoice
 const verifyChoice = (event) => {
@@ -78,15 +127,13 @@ const verifyChoice = (event) => {
 
         renderQuestion();
       } else {
-        console.log("TODO-show form");
+        renderForm();
       }
     } else {
       timerValue = timerValue - 5;
     }
   }
 };
-
-
 
 const renderQuestion = () => {
   const question = questions[questionIndex];
@@ -120,14 +167,14 @@ const renderQuestion = () => {
 
 const startTimer = () => {
   const timerTick = () => {
-    timerSpanElement.textContent = timerValue;
     timerValue -= 1;
+    timerSpanElement.textContent = timerValue;
 
     if (questionIndex === questions.length) {
       clearInterval(timer);
     }
 
-    if (timerValue < 0) {
+    if (timerValue <= 0) {
       clearInterval(timer);
 
       const questionDiv = document.getElementById("question");
@@ -156,4 +203,3 @@ const startQuiz = () => {
 };
 
 startButton.addEventListener("click", startQuiz);
-highScoresForm.addEventListener("click", onFormSubmit);
