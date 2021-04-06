@@ -52,8 +52,9 @@ const questions = [
       "JavaScript allows DOM elements to be nested inside each other",
   },
 ];
-
+//declared function
 const getScoresFromLocalStorage = () => {
+  //get item from local storage
   const scores = JSON.parse(localStorage.getItem("highScores"));
 
   if (scores === null) {
@@ -85,15 +86,15 @@ const onFormSubmit = (event) => {
 
   window.location.href = "./highscores.html";
 };
-
+//declared function for renderForm
 const renderForm = () => {
   const questionDiv = document.getElementById("question");
   quizContainer.removeChild(questionDiv);
-
+  //declared function to create elements
   const form = document.createElement("form");
   const input = document.createElement("input");
   const button = document.createElement("button");
-
+  //set attribute
   form.setAttribute("class", "scores-form");
 
   input.setAttribute("placeholder", "Please enter your name");
@@ -135,10 +136,10 @@ const verifyChoice = (event) => {
     }
   }
 };
-
+//declared function for renderQuestion
 const renderQuestion = () => {
   const question = questions[questionIndex];
-
+  //set attribute
   const questionDiv = document.createElement("div");
   questionDiv.setAttribute("data-answer", question.correctAnswer);
   questionDiv.setAttribute("id", "question");
@@ -146,9 +147,9 @@ const renderQuestion = () => {
 
   const h2 = document.createElement("h2");
   h2.textContent = question.title;
-
+  //append child
   questionDiv.appendChild(h2);
-
+  //declared function  to createChoice
   const createChoice = (choice) => {
     const choiceDiv = document.createElement("div");
     choiceDiv.setAttribute("class", "choice");
@@ -164,10 +165,10 @@ const renderQuestion = () => {
   question.choices.forEach(createChoice);
 
   questionDiv.addEventListener("click", verifyChoice);
-
+  //append child
   quizContainer.appendChild(questionDiv);
 };
-
+//declared function startTimer
 const startTimer = () => {
   const timerTick = () => {
     timerValue -= 1;
@@ -180,13 +181,15 @@ const startTimer = () => {
     if (timerValue <= 0) {
       clearInterval(timer);
 
+      //get element
       const questionDiv = document.getElementById("question");
+      //remove child
       quizContainer.removeChild(questionDiv);
-
+      //create element
       const div = document.createElement("div");
       const h2 = document.createElement("h2");
       h2.textContent = "Game Over";
-
+      //append child
       div.appendChild(h2);
 
       quizContainer.appendChild(div);

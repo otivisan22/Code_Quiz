@@ -5,16 +5,16 @@
   width: 100%;
   background-size: cover;
 }
-
+/* question h2 styling */
 .question h2 {
   text-align: center;
 }
-
+/* choice styling */
 .choice {
   padding: 20px;
   margin: 10px;
 }
-
+/* block styling */
 .block {
   display: block;
   width: 100%;
@@ -28,7 +28,7 @@
 .block:hover {
   background-color: grey;
 }
-
+/* heading styling */
 .header h1 {
   text-align: center;
   font-size: 36px;
@@ -41,7 +41,7 @@
   padding: 20px 0;
   border-bottom: 2px solid red;
 }
-
+/* button styling */
 .btn {
   text-decoration: none;
   border: none;
@@ -50,12 +50,12 @@
   color: white;
   background-color: #0d6efd;
 }
-
+/* timer styling */
 .timer {
   margin-left: 8px;
   font-size: 24px;
 }
-
+/* main styling */
 .container {
   margin-left: 10%;
   margin-right: 10%;
@@ -79,7 +79,7 @@
   padding: 10px;
   margin-right: 8px;
 }
-
+/* highscores styling */
 .highScores {
   background-color: #dbdbdb;
   padding: 20px;
@@ -101,7 +101,7 @@
   padding: 8px;
   background-color: #fff;
 }
-
+/* button styling */
 .btn-controls {
   margin-top: 30px;
   text-align: center;

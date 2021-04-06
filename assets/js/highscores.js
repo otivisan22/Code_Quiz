@@ -1,3 +1,4 @@
+//declared variables
 const gobackButton = document.getElementById("go-back");
 const clearscoresButton = document.getElementById("clear-scores");
 const tbody = document.getElementById("highScoresTableBody");
@@ -5,7 +6,7 @@ const tbody = document.getElementById("highScoresTableBody");
 const renderTableRow = (each) => {
   const name = each.name;
   const score = each.score;
-
+  //declared function to create elements
   const tr = document.createElement("tr");
   const nameTd = document.createElement("td");
   const scoreTd = document.createElement("td");
@@ -17,7 +18,7 @@ const renderTableRow = (each) => {
 
   tbody.append(tr);
 };
-
+//get from local storage
 const getScoresFromLocalStorage = () => {
   const scores = JSON.parse(localStorage.getItem("highScores"));
 
@@ -27,7 +28,7 @@ const getScoresFromLocalStorage = () => {
     return scores;
   }
 };
-
+//declared function renderTable
 const renderTable = () => {
   const scores = getScoresFromLocalStorage();
 
@@ -38,7 +39,7 @@ const renderTable = () => {
 const goback = () => {
   window.location.href = "./index.html";
 };
-
+//declared function clearscores
 const clearscores = () => {
   localStorage.clear();
   renderTable();
